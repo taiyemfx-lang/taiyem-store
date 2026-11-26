@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taiyem Store | Global Commerce & Sourcing Hub</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #0f172a; color: #f8fafc; line-height: 1.6; }
+    header { padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; background: #1e293b; position: sticky; top: 0; }
+    .logo { font-size: 1.3rem; font-weight: bold; color: #38bdf8; }
+    .btn { background: #22c55e; color: #052e16; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; border: none; cursor: pointer; }
+    .hero { padding: 70px 8%; text-align: center; background: linear-gradient(135deg, #0f172a, #1e293b); }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
+    .hero p { max-width: 650px; margin: 0 auto 25px; color: #cbd5e1; }
+    .section { padding: 50px 8%; }
+    .section h2 { text-align: center; margin-bottom: 30px; font-size: 1.7rem; color: #38bdf8; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .card { background: #1e293b; padding: 22px; border-radius: 10px; border: 1px solid #334155; }
+    .card h3 { margin-bottom: 10px; color: #f8fafc; }
+    .card p { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 15px; }
+    .quote-box { max-width: 550px; margin: 0 auto; background: #1e293b; padding: 25px; border-radius: 10px; border: 1px solid #334155; }
+    .quote-box input, .quote-box textarea { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 6px; border: 1px solid #475569; background: #0f172a; color: #fff; }
+    footer { text-align: center; padding: 25px; background: #090d16; color: #94a3b8; font-size: 0.9rem; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">TAIYEM STORE</div>
+    <a href="#quote" class="btn">Get a Quote</a>
+  </header>
+
+  <section class="hero">
+    <h1>Smart Sourcing & Global Product Hub</h1>
+    <p>Direct product showcase, fast quotation requests, and streamlined order inquiries in one central place.</p>
+    <a href="#products" class="btn">Explore Featured Items</a>
+  </section>
+
+  <section id="products" class="section">
+    <h2>Featured Collections</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Apparel & Textiles</h3>
+        <p>Quality-checked garments and textile sourcing tailored for international buyers and retail partners.</p>
+        <a href="#quote" class="btn">Request Details</a>
+      </div>
+      <div class="card">
+        <h3>Lifestyle & Accessories</h3>
+        <p>Curated everyday essentials and modern lifestyle products ready for order inquiry.</p>
+        <a href="#quote" class="btn">Request Details</a>
+      </div>
+      <div class="card">
+        <h3>Custom Bulk & Partner Deals</h3>
+        <p>Flexible sourcing options with transparent pricing and direct inquiry handling.</p>
+        <a href="#quote" class="btn">Request Details</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote" class="section">
+    <h2>Order / Quotation Request</h2>
+    <div class="quote-box">
+      <form onsubmit="sendQuote(event)">
+        <input type="text" id="name" placeholder="Your Name / Company" required />
+        <input type="text" id="product" placeholder="Product or Service Needed" required />
+        <textarea id="details" rows="4" placeholder="Quantity, target market, or message..." required></textarea>
+        <button type="submit" class="btn" style="width:100%;">Send Inquiry</button>
+      </form>
+      <p id="statusMsg" style="margin-top:12px; color:#4ade80;"></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Taiyem Store. All rights reserved.
+  </footer>
+
+  <script>
+    function sendQuote(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const product = document.getElementById("product").value;
+      const details = document.getElementById("details").value;
+      // Replace YOUR_WHATSAPP_NUMBER below with country code + number, e.g. 88017xxxxxxxx
+      const phone = "YOUR_WHATSAPP_NUMBER";
+      if (phone !== "YOUR_WHATSAPP_NUMBER") {
+        const text = encodeURIComponent(`Hello, I'm ${name}. Interested in: ${product}. Details: ${details}`);
+        window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+      } else {
+        document.getElementById("statusMsg").innerText = "Inquiry recorded! Add your WhatsApp number in the code to receive direct messages.";
+      }
+    }
+  </script>
+
+</body>
+  </html>
