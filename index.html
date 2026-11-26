@@ -73,25 +73,16 @@
 
   <footer>
     © 2026 Taiyem Store. All rights reserved.
-  </footer>
-
-  <script>
-    function sendQuote(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const product = document.getElementById("product").value;
-      const details = document.getElementById("details").value;
-      // Replace YOUR_WHATSAPP_NUMBER below with country code + number, e.g. 88017xxxxxxxx
-      const phone ="8801331158667";
-.......
-      if (phone !== "YOUR_WHATSAPP_NUMBER") {
-        const text = encodeURIComponent(`Hello, I'm ${name}. Interested in: ${product}. Details: ${details}`);
-        window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
-      } else {
-        document.getElementById("statusMsg").innerText = "Inquiry recorded! Add your WhatsApp number in the code to receive direct messages.";
-      }
-    }
-  </script>
-
-</body>
-  </html>
+ixxentnentw.op
+<script>
+  function sendQuote(e) {
+    e.preventDefault();
+    const name = document.getElementById("name") ? document.getElementById("name").value : "";
+    const product = document.getElementById("product") ? document.getElementById("product").value : "";
+    const details = document.getElementById("details") ? document.getElementById("details").value : "";
+    const phone = "8801331158667";
+    const message = `Hello, I have an inquiry from Taiyem Store.\nName/Company: ${name}\nProduct/Service: ${product}\nDetails: ${details}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+</script>
